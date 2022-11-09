@@ -38,6 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -123,12 +124,22 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "예정일";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(168, 414);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "예약";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormReserv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(411, 497);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
@@ -159,5 +170,6 @@
         private Label label4;
         private TextBox textBox4;
         private Label label5;
+        private Button button1;
     }
 }
