@@ -36,5 +36,17 @@ namespace project_dog
         {
 
         }
+
+        private void btnDogRegi_Click(object sender, EventArgs e)
+        {
+            dogRegist dogregist = new dogRegist();
+            dogregist.Show();
+        }
+
+        private void menuReserv_Click(object sender, EventArgs e)
+        {
+            FormReserv formreserv = new FormReserv();
+            formreserv.Show();
+        }
     }
 }

@@ -6,5 +6,12 @@ namespace project_dog
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            dogList doglist = new dogList();
+            doglist.Show();
+            //this.Dispose();
+        }
     }
 }

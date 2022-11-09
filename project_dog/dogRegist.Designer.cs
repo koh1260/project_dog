@@ -159,6 +159,7 @@
             this.Controls.Add(this.btnRegist);
             this.Controls.Add(this.pictureBox1);
             this.Name = "dogRegist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dogRegist";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
