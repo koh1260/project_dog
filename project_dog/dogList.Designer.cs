@@ -37,7 +37,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuReserv = new System.Windows.Forms.ToolStripMenuItem();
+            this.registList = new System.Windows.Forms.ToolStripMenuItem();
             this.입양완료갱얼지ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -50,7 +50,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDogRegi = new System.Windows.Forms.Button();
-            this.registList = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -127,7 +126,6 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuReserv,
             this.registList,
             this.입양완료갱얼지ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -136,20 +134,20 @@
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // menuReserv
+            // registList
             // 
-            this.menuReserv.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuReserv.Name = "menuReserv";
-            this.menuReserv.Size = new System.Drawing.Size(72, 23);
-            this.menuReserv.Text = "입양 예약";
-            this.menuReserv.Click += new System.EventHandler(this.menuReserv_Click);
+            this.registList.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.registList.Name = "registList";
+            this.registList.Size = new System.Drawing.Size(72, 23);
+            this.registList.Text = "예약 목록";
+            this.registList.Click += new System.EventHandler(this.registList_Click);
             // 
             // 입양완료갱얼지ToolStripMenuItem
             // 
             this.입양완료갱얼지ToolStripMenuItem.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.입양완료갱얼지ToolStripMenuItem.Name = "입양완료갱얼지ToolStripMenuItem";
-            this.입양완료갱얼지ToolStripMenuItem.Size = new System.Drawing.Size(111, 23);
-            this.입양완료갱얼지ToolStripMenuItem.Text = "입양 완료 갱애지";
+            this.입양완료갱얼지ToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
+            this.입양완료갱얼지ToolStripMenuItem.Text = "입양 완료";
             this.입양완료갱얼지ToolStripMenuItem.Click += new System.EventHandler(this.입양완료갱얼지ToolStripMenuItem_Click);
             // 
             // textBox6
@@ -254,13 +252,6 @@
             this.btnDogRegi.UseVisualStyleBackColor = true;
             this.btnDogRegi.Click += new System.EventHandler(this.btnDogRegi_Click);
             // 
-            // registList
-            // 
-            this.registList.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.registList.Name = "registList";
-            this.registList.Size = new System.Drawing.Size(72, 23);
-            this.registList.Text = "예약 목록";
-            // 
             // dogList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -312,7 +303,6 @@
         private TextBox textBox5;
         private Button button4;
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem menuReserv;
         private ToolStripMenuItem 입양완료갱얼지ToolStripMenuItem;
         private TextBox textBox6;
         private CheckBox checkBox1;

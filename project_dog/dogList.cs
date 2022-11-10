@@ -45,8 +45,14 @@ namespace project_dog
 
         private void menuReserv_Click(object sender, EventArgs e)
         {
-            FormReserv formreserv = new FormReserv();
+            FormReserve formreserv = new FormReserve();
             formreserv.Show();
+        }
+
+        private void registList_Click(object sender, EventArgs e)
+        {
+            reserveList reservelist = new reserveList();
+            reservelist.Show();
         }
     }
 }

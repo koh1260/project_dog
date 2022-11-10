@@ -16,5 +16,11 @@ namespace project_dog
         {
             InitializeComponent();
         }
+
+        private void btnReserve_Click(object sender, EventArgs e)
+        {
+            FormReserve formreserve = new FormReserve();
+            formreserve.Show();
+        }
     }
 }

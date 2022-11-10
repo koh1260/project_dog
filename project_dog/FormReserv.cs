@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace project_dog
 {
-    public partial class FormReserv : Form
+    public partial class FormReserve : Form
     {
-        public FormReserv()
+        public FormReserve()
         {
             InitializeComponent();
         }
