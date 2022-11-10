@@ -46,7 +46,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.registList = new System.Windows.Forms.ToolStripMenuItem();
+            this.입양완료갱얼지ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReserve
@@ -206,12 +210,39 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(116, 23);
             this.dateTimePicker1.TabIndex = 42;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registList,
+            this.입양완료갱얼지ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 27);
+            this.menuStrip1.TabIndex = 52;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // registList
+            // 
+            this.registList.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.registList.Name = "registList";
+            this.registList.Size = new System.Drawing.Size(84, 23);
+            this.registList.Text = "강아지 목록";
+            // 
+            // 입양완료갱얼지ToolStripMenuItem
+            // 
+            this.입양완료갱얼지ToolStripMenuItem.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.입양완료갱얼지ToolStripMenuItem.Name = "입양완료갱얼지ToolStripMenuItem";
+            this.입양완료갱얼지ToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
+            this.입양완료갱얼지ToolStripMenuItem.Text = "입양 완료";
+            // 
             // reserveList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
@@ -235,6 +266,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reserveList";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +293,8 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private DateTimePicker dateTimePicker1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem registList;
+        private ToolStripMenuItem 입양완료갱얼지ToolStripMenuItem;
     }
 }

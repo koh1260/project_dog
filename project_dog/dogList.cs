@@ -29,7 +29,8 @@ namespace project_dog
 
         private void 입양완료갱얼지ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            adopCom adopcom = new adopCom();
+            adopcom.Show();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
