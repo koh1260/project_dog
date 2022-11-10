@@ -32,7 +32,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.variety = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -66,7 +65,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(699, 140);
+            this.button2.Location = new System.Drawing.Point(634, 140);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 27);
             this.button2.TabIndex = 40;
@@ -75,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(597, 141);
+            this.button1.Location = new System.Drawing.Point(532, 141);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 27);
             this.button1.TabIndex = 39;
@@ -91,16 +90,6 @@
             this.variety.TabIndex = 33;
             this.variety.Text = "번호";
             this.variety.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(541, 146);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 19);
-            this.checkBox1.TabIndex = 32;
-            this.checkBox1.Text = "이름";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox6
             // 
@@ -221,6 +210,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1184, 27);
             this.menuStrip1.TabIndex = 52;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // registList
             // 
@@ -234,7 +224,7 @@
             this.입양완료갱얼지ToolStripMenuItem.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.입양완료갱얼지ToolStripMenuItem.Name = "입양완료갱얼지ToolStripMenuItem";
             this.입양완료갱얼지ToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
-            this.입양완료갱얼지ToolStripMenuItem.Text = "입양 완료";
+            this.입양완료갱얼지ToolStripMenuItem.Text = "분양 완료";
             // 
             // reserveList
             // 
@@ -257,7 +247,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.variety);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.dataGridView1);
@@ -279,7 +268,6 @@
         private Button button2;
         private Button button1;
         private CheckBox variety;
-        private CheckBox checkBox1;
         private TextBox textBox6;
         private Button button4;
         private DataGridView dataGridView1;

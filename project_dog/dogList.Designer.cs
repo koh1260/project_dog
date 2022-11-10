@@ -147,7 +147,7 @@
             this.입양완료갱얼지ToolStripMenuItem.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.입양완료갱얼지ToolStripMenuItem.Name = "입양완료갱얼지ToolStripMenuItem";
             this.입양완료갱얼지ToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
-            this.입양완료갱얼지ToolStripMenuItem.Text = "입양 완료";
+            this.입양완료갱얼지ToolStripMenuItem.Text = "분양 완료";
             this.입양완료갱얼지ToolStripMenuItem.Click += new System.EventHandler(this.입양완료갱얼지ToolStripMenuItem_Click);
             // 
             // textBox6

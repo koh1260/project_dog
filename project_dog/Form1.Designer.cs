@@ -72,6 +72,7 @@
             this.btnSignup.TabIndex = 3;
             this.btnSignup.Text = "회원가입";
             this.btnSignup.UseVisualStyleBackColor = true;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // btnLogin
             // 

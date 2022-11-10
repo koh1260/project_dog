@@ -13,5 +13,11 @@ namespace project_dog
             doglist.Show();
             //this.Dispose();
         }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            signUp signup = new signUp();
+            signup.Show();
+        }
     }
 }
