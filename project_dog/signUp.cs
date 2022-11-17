@@ -31,7 +31,7 @@ namespace project_dog
         {
             try
             {
-                con = new MySqlConnection("Server=113.198.233.244;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
+                con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
                 con.Open();                   
 
                 string selQuery = string.Format("SELECT * FROM admin WHERE ID='{0}'",idTb.Text);
