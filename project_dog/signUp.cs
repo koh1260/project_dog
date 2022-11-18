@@ -29,19 +29,24 @@ namespace project_dog
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string name = nameTb.Text;
+            string id = idTb.Text;
+            string pw = pwTb.Text;
+            string pwC = pwCTb.Text;
+
             try
             {
-                con = new MySqlConnection("Server=113.198.233.244;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
+                con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
                 con.Open();                   
 
-                string selQuery = string.Format("SELECT * FROM admin WHERE ID='{0}'",idTb.Text);
-                string inQuery = string.Format("INSERT INTO admin (ID, PW, name) VALUES('{0}','{1}','{2}')", idTb.Text, pwTb.Text, nameTb, Text);
+                string selQuery = string.Format("SELECT * FROM admin WHERE ID='{0}'",id);
+                string inQuery = string.Format("INSERT INTO admin (ID, PW, name) VALUES('{0}','{1}','{2}')", id, pw, name);
 
                 MySqlCommand selCmd = new MySqlCommand(selQuery, con);
                 MySqlCommand inCmd = new MySqlCommand(inQuery, con);
                 MySqlDataReader rdr = selCmd.ExecuteReader();
 
-                if (idTb.Text.Length != 0 && pwTb.Text.Length != 0 && pwCTb.Text.Length != 0 && nameTb.Text.Length != 0)
+                if (id.Length != 0 && pw.Length != 0 && pw.Length != 0 && name.Length != 0)
                 {
                     if (rdr.Read())
                     {
@@ -50,17 +55,21 @@ namespace project_dog
                         return;
                     }
                     rdr.Close();
-                    if (pwTb.Text == pwCTb.Text)
-                    {
-                        if (inCmd.ExecuteNonQuery() == 1)
+                    if (pw.Length >= 8) {
+                        if (pwTb.Text == pwCTb.Text)
                         {
-                            MessageBox.Show("회원 가입이 완료되었습니다.");
-                            con.Close();
-                            return;
+                            if (inCmd.ExecuteNonQuery() == 1)
+                            {
+                                MessageBox.Show("회원 가입이 완료되었습니다.");
+                                con.Close();
+                                return;
+                            }
                         }
-
+                        MessageBox.Show("비밀번호가 일치하지 않습니다.");
+                        con.Close();
                     }
-                    MessageBox.Show("비밀번호가 일치하지 않습니다.");
+                    MessageBox.Show("비번 8자 이상 입력 ㄱㄱ");
+                    con.Close();
                     return;
                 }
                 MessageBox.Show("정보를 모두 입력하세요.");

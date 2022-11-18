@@ -68,6 +68,7 @@
             // 
             this.pwTb.Location = new System.Drawing.Point(160, 257);
             this.pwTb.Name = "pwTb";
+            this.pwTb.PasswordChar = '*';
             this.pwTb.Size = new System.Drawing.Size(100, 23);
             this.pwTb.TabIndex = 3;
             // 
@@ -75,6 +76,7 @@
             // 
             this.pwCTb.Location = new System.Drawing.Point(160, 312);
             this.pwCTb.Name = "pwCTb";
+            this.pwCTb.PasswordChar = '*';
             this.pwCTb.Size = new System.Drawing.Size(100, 23);
             this.pwCTb.TabIndex = 4;
             // 
