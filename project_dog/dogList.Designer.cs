@@ -50,6 +50,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnDogRegi = new System.Windows.Forms.Button();
+            this.adminName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -252,12 +253,22 @@
             this.btnDogRegi.UseVisualStyleBackColor = true;
             this.btnDogRegi.Click += new System.EventHandler(this.btnDogRegi_Click);
             // 
+            // adminName
+            // 
+            this.adminName.AutoSize = true;
+            this.adminName.Location = new System.Drawing.Point(1024, 12);
+            this.adminName.Name = "adminName";
+            this.adminName.Size = new System.Drawing.Size(39, 15);
+            this.adminName.TabIndex = 23;
+            this.adminName.Text = "label6";
+            // 
             // dogList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.adminName);
             this.Controls.Add(this.btnDogRegi);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -316,5 +327,6 @@
         private Button button2;
         private Button btnDogRegi;
         private ToolStripMenuItem registList;
+        private Label adminName;
     }
 }

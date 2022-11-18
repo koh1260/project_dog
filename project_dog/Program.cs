@@ -12,6 +12,8 @@ namespace project_dog
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            //(new Form1()).Show();
+            //Application.Run();
         }
     }
 }

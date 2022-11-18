@@ -12,9 +12,10 @@ namespace project_dog
 {
     public partial class dogList : Form
     {
-        public dogList()
+        public dogList(string name)
         {
             InitializeComponent();
+            adminName.Text = name;
         }
 
         private void button1_Click(object sender, EventArgs e)
