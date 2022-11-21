@@ -1,5 +1,21 @@
 namespace project_dog
 {
+    class Creature
+    {
+        public string name { get; set; }
+        public int age { get; set; }
+        public string sex { get; set; }
+    }
+    class Dog : Creature
+    {
+        public string var { get; set; }
+        public char neu { get; set; }
+        public int par { get; set; }
+    }
+    class Person : Creature
+    {
+
+    }
     internal static class Program
     {
         /// <summary>

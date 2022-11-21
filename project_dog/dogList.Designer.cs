@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dogDataList = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -51,25 +52,40 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnDogRegi = new System.Windows.Forms.Button();
             this.adminName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dogDataList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dogDataList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(269, 175);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(914, 485);
-            this.dataGridView1.TabIndex = 0;
+            this.dogDataList.AllowUserToAddRows = false;
+            this.dogDataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dogDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dogDataList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dogDataList.Location = new System.Drawing.Point(269, 175);
+            this.dogDataList.Name = "dogDataList";
+            this.dogDataList.ReadOnly = true;
+            this.dogDataList.RowTemplate.Height = 25;
+            this.dogDataList.Size = new System.Drawing.Size(914, 485);
+            this.dogDataList.TabIndex = 0;
+            this.dogDataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dogDataList.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(81, 402);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 27);
             this.textBox1.TabIndex = 4;
             // 
@@ -78,6 +94,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(57, 175);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 192);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -86,6 +103,7 @@
             this.textBox2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox2.Location = new System.Drawing.Point(81, 449);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 27);
             this.textBox2.TabIndex = 6;
             // 
@@ -94,6 +112,7 @@
             this.textBox3.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox3.Location = new System.Drawing.Point(81, 491);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 27);
             this.textBox3.TabIndex = 7;
             // 
@@ -102,6 +121,7 @@
             this.textBox4.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox4.Location = new System.Drawing.Point(81, 534);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(100, 27);
             this.textBox4.TabIndex = 8;
             // 
@@ -110,6 +130,7 @@
             this.textBox5.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox5.Location = new System.Drawing.Point(81, 574);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(100, 27);
             this.textBox5.TabIndex = 9;
             // 
@@ -233,6 +254,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "조회";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -242,6 +264,7 @@
             this.button2.TabIndex = 21;
             this.button2.Text = "삭제";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDogRegi
             // 
@@ -262,12 +285,25 @@
             this.adminName.TabIndex = 23;
             this.adminName.Text = "label6";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightCoral;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(1156, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // dogList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.adminName);
             this.Controls.Add(this.btnDogRegi);
             this.Controls.Add(this.button2);
@@ -287,14 +323,14 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dogDataList);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "dogList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "dogList";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dogDataList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -305,7 +341,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dogDataList;
         private TextBox textBox1;
         private PictureBox pictureBox1;
         private TextBox textBox2;
@@ -328,5 +364,6 @@
         private Button btnDogRegi;
         private ToolStripMenuItem registList;
         private Label adminName;
+        private Button button3;
     }
 }

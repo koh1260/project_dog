@@ -42,6 +42,7 @@
             // textBoxId
             // 
             this.textBoxId.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxId.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBoxId.Location = new System.Drawing.Point(511, 422);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(174, 33);
@@ -50,6 +51,7 @@
             // textBoxPw
             // 
             this.textBoxPw.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPw.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.textBoxPw.Location = new System.Drawing.Point(511, 488);
             this.textBoxPw.Name = "textBoxPw";
             this.textBoxPw.PasswordChar = '*';

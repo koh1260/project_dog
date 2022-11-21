@@ -37,7 +37,7 @@ namespace project_dog
                     Console.WriteLine(rdr["PW"]);
                     if (Equals(pw, rdr["PW"]))
                     {
-                        MessageBox.Show("반가워 " + rdr["PW"]);
+                        MessageBox.Show("반가워 " + rdr["name"]);
                         con.Close();
                         rdr.Close();
 
