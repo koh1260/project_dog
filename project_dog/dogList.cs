@@ -114,9 +114,33 @@ namespace project_dog
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.dogDataList.SelectedRows)
+            foreach (DataGridViewRow row in this.dogDataList.SelectedRows)
             {
-                dogDataList.Rows.RemoveAt(item.Index);
+                int data = (int)row.Cells[0].Value;
+                dogDataList.Rows.RemoveAt(row.Index);
+
+                string delQuery = string.Format("DELETE FROM dog WHERE  DogID = {0}", data);
+                MySqlCommand delCmd = new MySqlCommand(delQuery, con);
+
+                MySqlDataReader rdr;
+
+                try
+                {
+                    con.Open();
+                    rdr = delCmd.ExecuteReader();
+                    textBox1.Text = null;
+                    textBox2.Text = null;
+                    textBox3.Text = null;
+                    textBox4.Text = null;
+                    textBox5.Text = null;
+                    pictureBox1.Image = null;
+
+                    rdr.Close();
+                    con.Close();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
