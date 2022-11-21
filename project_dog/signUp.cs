@@ -46,6 +46,7 @@ namespace project_dog
                 MySqlCommand inCmd = new MySqlCommand(inQuery, con);
                 MySqlDataReader rdr = selCmd.ExecuteReader();
 
+                //하나라도 비어 있음 안 됨, 비번 8자 이상, 아이디는 중복X, 
                 if (id.Length != 0 && pw.Length != 0 && pw.Length != 0 && name.Length != 0)
                 {
                     if (rdr.Read())
@@ -61,6 +62,10 @@ namespace project_dog
                             if (inCmd.ExecuteNonQuery() == 1)
                             {
                                 MessageBox.Show("회원 가입이 완료되었습니다.");
+                                nameTb.Text = null;
+                                idTb.Text = null;
+                                pwTb.Text = null;
+                                pwCTb.Text = null;
                                 con.Close();
                                 return;
                             }

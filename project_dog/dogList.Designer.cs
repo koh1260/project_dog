@@ -279,9 +279,10 @@
             // adminName
             // 
             this.adminName.AutoSize = true;
-            this.adminName.Location = new System.Drawing.Point(1024, 12);
+            this.adminName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adminName.Location = new System.Drawing.Point(14, 27);
             this.adminName.Name = "adminName";
-            this.adminName.Size = new System.Drawing.Size(39, 15);
+            this.adminName.Size = new System.Drawing.Size(43, 17);
             this.adminName.TabIndex = 23;
             this.adminName.Text = "label6";
             // 

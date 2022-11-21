@@ -86,6 +86,12 @@ namespace project_dog
                     if (inCmd.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("등록이 완료되었습니다.");
+                        pictureBox1.Image = null;
+                        ReNameTb.Text = null;
+                        ReAgeTb.Text = null;
+                        ReVarTb.Text = null;
+                        boyCb.Checked = true;
+                        NeuO.Checked = true;
                         con.Close();
                         return;
                     }

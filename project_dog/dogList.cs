@@ -16,10 +16,10 @@ namespace project_dog
     public partial class dogList : Form
     {
         MySqlConnection con; 
-        public dogList(string name)
+        public dogList(string id)
         {
             InitializeComponent();
-            adminName.Text = name;
+            adminName.Text = "관리자: " + id;
             con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
         }
 
