@@ -58,6 +58,7 @@
             this.textBoxPw.ShortcutsEnabled = false;
             this.textBoxPw.Size = new System.Drawing.Size(174, 33);
             this.textBoxPw.TabIndex = 1;
+            this.textBoxPw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPw_KeyDown);
             // 
             // pictureBox1
             // 

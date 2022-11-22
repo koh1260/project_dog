@@ -74,5 +74,13 @@ namespace project_dog
         {
             Application.Exit();
         }
+
+        private void textBoxPw_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender, e);
+            }
+        }
     }
 }

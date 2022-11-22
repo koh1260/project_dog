@@ -29,6 +29,32 @@ namespace project_dog
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
+
+            //if (selCommand.ExecuteNonQuery() != 1)
+            //    ShowDialog("")
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pwCTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnOk_Click(sender, e);
+             }
+        }
+
+        private void pwCTb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
             string name = nameTb.Text;
             string id = idTb.Text;
             string pw = pwTb.Text;
@@ -37,9 +63,9 @@ namespace project_dog
             try
             {
                 con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
-                con.Open();                   
+                con.Open();
 
-                string selQuery = string.Format("SELECT * FROM admin WHERE ID='{0}'",id);
+                string selQuery = string.Format("SELECT * FROM admin WHERE ID='{0}'", id);
                 string inQuery = string.Format("INSERT INTO admin (ID, PW, name) VALUES('{0}','{1}','{2}')", id, pw, name);
 
                 MySqlCommand selCmd = new MySqlCommand(selQuery, con);
@@ -56,7 +82,8 @@ namespace project_dog
                         return;
                     }
                     rdr.Close();
-                    if (pw.Length >= 8) {
+                    if (pw.Length >= 8)
+                    {
                         if (pwTb.Text == pwCTb.Text)
                         {
                             if (inCmd.ExecuteNonQuery() == 1)
@@ -81,18 +108,10 @@ namespace project_dog
                 con.Close();
 
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
                 MessageBox.Show(exc.Message);
             }
-
-            //if (selCommand.ExecuteNonQuery() != 1)
-            //    ShowDialog("")
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

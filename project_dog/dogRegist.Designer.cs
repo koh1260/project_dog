@@ -43,9 +43,7 @@
             this.NeuX = new System.Windows.Forms.CheckBox();
             this.NeuO = new System.Windows.Forms.CheckBox();
             this.roadPic = new System.Windows.Forms.Button();
-            this.savePic = new System.Windows.Forms.Button();
             this.imgSearch = new System.Windows.Forms.OpenFileDialog();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +68,7 @@
             // 
             // ReNameTb
             // 
-            this.ReNameTb.Location = new System.Drawing.Point(159, 227);
+            this.ReNameTb.Location = new System.Drawing.Point(164, 227);
             this.ReNameTb.Name = "ReNameTb";
             this.ReNameTb.Size = new System.Drawing.Size(100, 23);
             this.ReNameTb.TabIndex = 2;
@@ -78,7 +76,7 @@
             // 
             // ReAgeTb
             // 
-            this.ReAgeTb.Location = new System.Drawing.Point(159, 271);
+            this.ReAgeTb.Location = new System.Drawing.Point(164, 271);
             this.ReAgeTb.Name = "ReAgeTb";
             this.ReAgeTb.Size = new System.Drawing.Size(100, 23);
             this.ReAgeTb.TabIndex = 3;
@@ -86,7 +84,7 @@
             // 
             // ReVarTb
             // 
-            this.ReVarTb.Location = new System.Drawing.Point(159, 316);
+            this.ReVarTb.Location = new System.Drawing.Point(164, 316);
             this.ReVarTb.Name = "ReVarTb";
             this.ReVarTb.Size = new System.Drawing.Size(100, 23);
             this.ReVarTb.TabIndex = 4;
@@ -95,7 +93,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(114, 230);
+            this.label1.Location = new System.Drawing.Point(119, 230);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 15);
             this.label1.TabIndex = 7;
@@ -104,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 274);
+            this.label2.Location = new System.Drawing.Point(119, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 8;
@@ -113,7 +111,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(114, 316);
+            this.label3.Location = new System.Drawing.Point(119, 316);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 9;
@@ -122,7 +120,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 362);
+            this.label4.Location = new System.Drawing.Point(119, 362);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 10;
@@ -131,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 405);
+            this.label5.Location = new System.Drawing.Point(115, 405);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 11;
@@ -140,7 +138,7 @@
             // boyCb
             // 
             this.boyCb.AutoSize = true;
-            this.boyCb.Location = new System.Drawing.Point(164, 362);
+            this.boyCb.Location = new System.Drawing.Point(169, 362);
             this.boyCb.Name = "boyCb";
             this.boyCb.Size = new System.Drawing.Size(38, 19);
             this.boyCb.TabIndex = 12;
@@ -151,7 +149,7 @@
             // girlCb
             // 
             this.girlCb.AutoSize = true;
-            this.girlCb.Location = new System.Drawing.Point(226, 362);
+            this.girlCb.Location = new System.Drawing.Point(231, 362);
             this.girlCb.Name = "girlCb";
             this.girlCb.Size = new System.Drawing.Size(38, 19);
             this.girlCb.TabIndex = 13;
@@ -162,7 +160,7 @@
             // NeuX
             // 
             this.NeuX.AutoSize = true;
-            this.NeuX.Location = new System.Drawing.Point(226, 404);
+            this.NeuX.Location = new System.Drawing.Point(231, 404);
             this.NeuX.Name = "NeuX";
             this.NeuX.Size = new System.Drawing.Size(33, 19);
             this.NeuX.TabIndex = 15;
@@ -173,7 +171,7 @@
             // NeuO
             // 
             this.NeuO.AutoSize = true;
-            this.NeuO.Location = new System.Drawing.Point(164, 404);
+            this.NeuO.Location = new System.Drawing.Point(169, 404);
             this.NeuO.Name = "NeuO";
             this.NeuO.Size = new System.Drawing.Size(35, 19);
             this.NeuO.TabIndex = 14;
@@ -183,23 +181,13 @@
             // 
             // roadPic
             // 
-            this.roadPic.Location = new System.Drawing.Point(143, 179);
+            this.roadPic.Location = new System.Drawing.Point(171, 179);
             this.roadPic.Name = "roadPic";
-            this.roadPic.Size = new System.Drawing.Size(67, 24);
+            this.roadPic.Size = new System.Drawing.Size(80, 24);
             this.roadPic.TabIndex = 16;
-            this.roadPic.Text = "Read";
+            this.roadPic.Text = "이미지 선택";
             this.roadPic.UseVisualStyleBackColor = true;
             this.roadPic.Click += new System.EventHandler(this.selPic_Click);
-            // 
-            // savePic
-            // 
-            this.savePic.Location = new System.Drawing.Point(207, 179);
-            this.savePic.Name = "savePic";
-            this.savePic.Size = new System.Drawing.Size(67, 24);
-            this.savePic.TabIndex = 17;
-            this.savePic.Text = "Save";
-            this.savePic.UseVisualStyleBackColor = true;
-            this.savePic.Click += new System.EventHandler(this.savePic_Click);
             // 
             // imgSearch
             // 
@@ -207,23 +195,12 @@
             this.imgSearch.InitialDirectory = "C:";
             this.imgSearch.Title = "멋쟁이 강아지";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 15);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "label6";
-            // 
             // dogRegist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(411, 497);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.savePic);
             this.Controls.Add(this.roadPic);
             this.Controls.Add(this.NeuX);
             this.Controls.Add(this.NeuO);
@@ -265,8 +242,6 @@
         private CheckBox NeuX;
         private CheckBox NeuO;
         private Button roadPic;
-        private Button savePic;
         private OpenFileDialog imgSearch;
-        private Label label6;
     }
 }

@@ -147,6 +147,11 @@ namespace project_dog
             //성별 체크박스 중복 선택 X
             CheckBox cb = (CheckBox)sender;
 
+            if(boyCb.Checked == false && girlCb.Checked == false)
+            {
+                boyCb.Checked = true;
+            }
+
             foreach (CheckBox c in BoyAndGirl)
             {
                 if (cb.Checked)
@@ -165,6 +170,11 @@ namespace project_dog
         {
             CheckBox cb = (CheckBox)sender;
 
+            if (boyCb.Checked == false && girlCb.Checked == false)
+            {
+                boyCb.Checked = true;
+            }
+
             foreach (CheckBox c in BoyAndGirl)
             {
                 if (cb.Checked)
@@ -182,6 +192,11 @@ namespace project_dog
         private void NeuO_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox cb = (CheckBox)sender;
+
+            if (NeuO.Checked == false && NeuX.Checked == false)
+            {
+                NeuO.Checked = true;
+            }
 
             foreach (CheckBox c in NeuCheckB)
             {

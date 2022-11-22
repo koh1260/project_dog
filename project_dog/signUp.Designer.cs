@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ok = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.nameTb = new System.Windows.Forms.TextBox();
             this.idTb = new System.Windows.Forms.TextBox();
             this.pwTb = new System.Windows.Forms.TextBox();
@@ -39,15 +39,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ok
+            // btnOk
             // 
-            this.ok.Location = new System.Drawing.Point(172, 408);
-            this.ok.Name = "ok";
-            this.ok.Size = new System.Drawing.Size(75, 23);
-            this.ok.TabIndex = 0;
-            this.ok.Text = "확인";
-            this.ok.UseVisualStyleBackColor = true;
-            this.ok.Click += new System.EventHandler(this.button1_Click);
+            this.btnOk.Location = new System.Drawing.Point(172, 408);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 0;
+            this.btnOk.Text = "확인";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // nameTb
             // 
@@ -79,6 +79,8 @@
             this.pwCTb.PasswordChar = '*';
             this.pwCTb.Size = new System.Drawing.Size(100, 23);
             this.pwCTb.TabIndex = 4;
+            this.pwCTb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pwCTb_KeyDown);
+            this.pwCTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pwCTb_KeyPress);
             // 
             // label1
             // 
@@ -131,7 +133,7 @@
             this.Controls.Add(this.pwTb);
             this.Controls.Add(this.idTb);
             this.Controls.Add(this.nameTb);
-            this.Controls.Add(this.ok);
+            this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "signUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -143,7 +145,7 @@
 
         #endregion
 
-        private Button ok;
+        private Button btnOk;
         private TextBox nameTb;
         private TextBox idTb;
         private TextBox pwTb;
