@@ -83,6 +83,16 @@ namespace project_dog.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap profilejpg {
+            get {
+                object obj = ResourceManager.GetObject("profilejpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 화면_캡처_2022_11_09_224826 {
             get {
                 object obj = ResourceManager.GetObject("화면 캡처 2022-11-09 224826", resourceCulture);

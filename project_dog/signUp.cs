@@ -106,7 +106,6 @@ namespace project_dog
                 }
                 MessageBox.Show("정보를 모두 입력하세요.");
                 con.Close();
-
             }
             catch (Exception exc)
             {

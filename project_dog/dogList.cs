@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualBasic.Logging;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities;
+using Org.BouncyCastle.Utilities.Encoders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +12,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace project_dog
 {
@@ -97,7 +102,7 @@ namespace project_dog
         {
             con.Open();
             //미분양된 강아지 SELECT
-            string selQuery = "SELECT DogID, name, age, sex, var, neu, image FROM dog WHERE par = 0";
+            string selQuery = "SELECT DogID, name, age, sex, var, neu  FROM dog WHERE par = 0";
             MySqlCommand selCmd = new MySqlCommand(selQuery, con);
             MySqlDataAdapter da = new MySqlDataAdapter(selCmd);
             DataTable dt = new DataTable();
@@ -115,18 +120,36 @@ namespace project_dog
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+
             foreach (DataGridViewRow row in dogDataList.SelectedRows)
             {
+                con.Open();
+                string imgSelQuery = string.Format("SELECT image FROM dog WHERE DogID = {0}", row.Cells[0].Value);
+                MySqlCommand imgSelCmd = new MySqlCommand(imgSelQuery, con);
+                MySqlDataReader rdr = imgSelCmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    if (DBNull.Value != rdr["image"])
+                    {
+                        var data = (Byte[])rdr["image"];
+                        var stream = new MemoryStream(data);
+                        pictureBox1.Image = System.Drawing.Image.FromStream(stream);
+                    }
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
+                }
+                rdr.Close();
                 //선택된 셀의 데이터 왼 쪽 TextBox, PictureBox에 넣기.
                 textBox1.Text = row.Cells[1].Value.ToString();
                 textBox2.Text = row.Cells[2].Value.ToString();
                 textBox3.Text = row.Cells[3].Value.ToString();
                 textBox4.Text = row.Cells[4].Value.ToString();
                 textBox5.Text = row.Cells[5].Value.ToString();
-    
-                var data = (Byte[])(row.Cells[6].Value);
-                var stream = new MemoryStream(data);
-                pictureBox1.Image = System.Drawing.Image.FromStream(stream);
+
+                con.Close();
             }
         }
 
@@ -190,12 +213,11 @@ namespace project_dog
                 }
             }
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             con.Open();
             //체크된 조건을 만족하고 미분양된 강아지 검색
-            string searchQuery = string.Format("SELECT DogID, name, age, sex, var, neu, image FROM dog WHERE {0} = '{1}' AND par = 0 ", searchVal, searchTb.Text);
+            string searchQuery = string.Format("SELECT DogID, name, age, sex, var, neu  FROM dog WHERE {0} = '{1}' AND par = 0 ", searchVal, searchTb.Text);
             MySqlCommand searchCmd = new MySqlCommand(searchQuery, con);
             MySqlDataReader rdr = searchCmd.ExecuteReader();
 
