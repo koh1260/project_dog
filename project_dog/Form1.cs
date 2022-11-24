@@ -35,7 +35,7 @@ namespace project_dog
                     Console.WriteLine(rdr["PW"]);
                     if (Equals(pw, rdr["PW"]))
                     {
-                        MessageBox.Show("반가워 " + rdr["name"]);
+                        MessageBox.Show("반갑습니다  " + rdr["name"]+"님");
                         Program.con.Close();
                         rdr.Close();
                         Program.id = id;
@@ -46,7 +46,7 @@ namespace project_dog
                     }
                     else
                     {
-                        MessageBox.Show("비번이 달라");
+                        MessageBox.Show("비밀번호가 일치하지 않습니다.");
                         rdr.Close();
                         return;
                     }

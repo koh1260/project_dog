@@ -17,11 +17,10 @@ namespace project_dog
 {
     public partial class dogRegist : Form
     {
-        MySqlConnection con;
         Dog dog = new Dog();
         List<CheckBox> BoyAndGirl = new List<CheckBox>();
         List<CheckBox> NeuCheckB = new List<CheckBox>();
-        string imgPath;
+        string imgPath = null;
         public dogRegist()
         {
             InitializeComponent();
@@ -30,7 +29,6 @@ namespace project_dog
             NeuO.Checked = true;
             BoyAndGirl = new List<CheckBox>() { boyCb, girlCb };
             NeuCheckB = new List<CheckBox>() { NeuO, NeuX };
-            con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
         }
 
         private void btnRegist_Click(object sender, EventArgs e)
@@ -65,21 +63,32 @@ namespace project_dog
             FileStream fs;
             BinaryReader br;
             try {
-                fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
-                FileSize = (UInt32)fs.Length;
+                MySqlCommand inCmd;
+                if (imgPath != null)
+                {
+                    fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
+                    FileSize = (UInt32)fs.Length;
 
-                rawData = new byte[FileSize];
-                fs.Read(rawData, 0, (int)FileSize);
-                fs.Close();
+                    rawData = new byte[FileSize];
+                    fs.Read(rawData, 0, (int)FileSize);
+                    fs.Close();
 
-                con.Open();
+                    Program.con.Open();
 
-                string inQuery = string.Format("INSERT INTO dog (name, age, sex, var, neu, par, image) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5}, @File)", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
+                    string inQuery = string.Format("INSERT INTO dog (name, age, sex, var, neu, par, image) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5}, @File)", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
 
-                MySqlCommand inCmd = new MySqlCommand(inQuery, con);
+                    inCmd = new MySqlCommand(inQuery, Program.con);
 
-                inCmd.Parameters.AddWithValue("@File", rawData);
+                    inCmd.Parameters.AddWithValue("@File", rawData);
+                }
+                else
+                {
+                    Program.con.Open();
 
+                    string inQuery = string.Format("INSERT INTO dog (name, age, sex, var, neu, par) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5})", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
+
+                    inCmd = new MySqlCommand(inQuery, Program.con);
+                }
                 if (dog.name.Length != 0 && dog.age != 0 && dog.var.Length != 0)
                 {
 
@@ -92,10 +101,11 @@ namespace project_dog
                         ReVarTb.Text = null;
                         boyCb.Checked = true;
                         NeuO.Checked = true;
-                        con.Close();
+                        Program.con.Close();
                         return;
                     }
                 }
+                Program.con.Close();
                 MessageBox.Show("정보를 모두 입력하세요.");
             } catch (Exception exc)
             {
@@ -248,7 +258,6 @@ namespace project_dog
         }
         public void ShowFileOpenDialog(){
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Title = "파일 오픈 예정";
             ofd.FileName = "image";
             ofd.Filter = "이미지 파일 (*.jpg, *.png) | *.jpg; *.png";
 

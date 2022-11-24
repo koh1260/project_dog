@@ -16,14 +16,15 @@ namespace project_dog
 {
     public partial class reserveList : Form
     {
+        string searchVal = "Phone";
         Person person = new Person();
-        List<CheckBox> check = new List<CheckBox>();
         public reserveList()
         {
             InitializeComponent();
-            adminName.Text = "관리자: " + Program.id;
-            check = new List<CheckBox>() { manCb, womanCb };
             manCb.Checked = true;
+            numCb.Checked = true;
+            adminName.Text = "관리자: " + Program.id;
+            dateTimePicker1.MinDate = DateTime.Now;
         }
 
         private void btnReserve_Click(object sender, EventArgs e)
@@ -271,6 +272,72 @@ namespace project_dog
             adopCom adop = new adopCom();
             adop.Show();
             this.Close();
+        }
+
+        private void numCb_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+
+            if(cb.Checked == true)
+            {
+                searchVal = "Phone";
+                numCb.Checked = false;
+                return;
+            }
+            if(cb.Checked == false)
+            {
+                if(nameCb.Checked == false)
+                {
+                    searchVal = "Phone";
+                    numCb.Checked = true;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string search = searchTb.Text;
+
+            Program.con.Open();
+
+            string searchQuery = string.Format("SELECT * FROM reservation WHERE {0} = {1}", searchVal, search);
+            MySqlCommand searchCmd = new MySqlCommand(searchQuery, Program.con);
+            MySqlDataReader rdr = searchCmd.ExecuteReader();
+
+            if (rdr.Read())
+            {
+                rdr.Close();
+                MySqlDataAdapter da = new MySqlDataAdapter(searchCmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                reserveDataList.DataSource = dt;
+
+                Program.con.Close();
+                return;
+            }
+            MessageBox.Show("정보가 없습니다");
+            Program.con.Close();
+        }
+
+        private void nameCb_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = (CheckBox)sender;
+
+            if (cb.Checked == true)
+            {
+                searchVal = "name";
+                nameCb.Checked = false;
+                return;
+            }
+            if (cb.Checked == false)
+            {
+                if (numCb.Checked == false)
+                {
+                    searchVal = "name";
+                    nameCb.Checked = true;
+                }
+            }
         }
     }
 }

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReserve = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.variety = new System.Windows.Forms.CheckBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.numCb = new System.Windows.Forms.CheckBox();
+            this.searchTb = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.reserveDataList = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.manCb = new System.Windows.Forms.CheckBox();
             this.womanCb = new System.Windows.Forms.CheckBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.varCb = new System.Windows.Forms.CheckBox();
+            this.nameCb = new System.Windows.Forms.CheckBox();
             this.adminName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reserveDataList)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -86,23 +86,24 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // variety
+            // numCb
             // 
-            this.variety.AutoSize = true;
-            this.variety.Location = new System.Drawing.Point(485, 147);
-            this.variety.Name = "variety";
-            this.variety.Size = new System.Drawing.Size(50, 19);
-            this.variety.TabIndex = 33;
-            this.variety.Text = "번호";
-            this.variety.UseVisualStyleBackColor = true;
+            this.numCb.AutoSize = true;
+            this.numCb.Location = new System.Drawing.Point(485, 147);
+            this.numCb.Name = "numCb";
+            this.numCb.Size = new System.Drawing.Size(50, 19);
+            this.numCb.TabIndex = 33;
+            this.numCb.Text = "번호";
+            this.numCb.UseVisualStyleBackColor = true;
+            this.numCb.CheckedChanged += new System.EventHandler(this.numCb_CheckedChanged);
             // 
-            // textBox6
+            // searchTb
             // 
-            this.textBox6.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(269, 142);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(117, 27);
-            this.textBox6.TabIndex = 31;
+            this.searchTb.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchTb.Location = new System.Drawing.Point(269, 142);
+            this.searchTb.Name = "searchTb";
+            this.searchTb.Size = new System.Drawing.Size(117, 27);
+            this.searchTb.TabIndex = 31;
             // 
             // button4
             // 
@@ -112,6 +113,7 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "검색";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // reserveDataList
             // 
@@ -123,34 +125,34 @@
             this.reserveDataList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.reserveDataList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.reserveDataList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reserveDataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reserveDataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.reserveDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reserveDataList.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reserveDataList.DefaultCellStyle = dataGridViewCellStyle2;
             this.reserveDataList.GridColor = System.Drawing.SystemColors.Control;
             this.reserveDataList.Location = new System.Drawing.Point(269, 175);
             this.reserveDataList.Name = "reserveDataList";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.reserveDataList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reserveDataList.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.reserveDataList.RowTemplate.Height = 25;
             this.reserveDataList.Size = new System.Drawing.Size(914, 485);
             this.reserveDataList.TabIndex = 23;
@@ -213,6 +215,7 @@
             this.dateTimePicker1.MaxDate = new System.DateTime(2023, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2022, 11, 24, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.RightToLeftLayout = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(116, 23);
             this.dateTimePicker1.TabIndex = 42;
             // 
@@ -358,15 +361,16 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // varCb
+            // nameCb
             // 
-            this.varCb.AutoSize = true;
-            this.varCb.Location = new System.Drawing.Point(539, 147);
-            this.varCb.Name = "varCb";
-            this.varCb.Size = new System.Drawing.Size(50, 19);
-            this.varCb.TabIndex = 63;
-            this.varCb.Text = "이름";
-            this.varCb.UseVisualStyleBackColor = true;
+            this.nameCb.AutoSize = true;
+            this.nameCb.Location = new System.Drawing.Point(539, 147);
+            this.nameCb.Name = "nameCb";
+            this.nameCb.Size = new System.Drawing.Size(50, 19);
+            this.nameCb.TabIndex = 63;
+            this.nameCb.Text = "이름";
+            this.nameCb.UseVisualStyleBackColor = true;
+            this.nameCb.CheckedChanged += new System.EventHandler(this.nameCb_CheckedChanged);
             // 
             // adminName
             // 
@@ -386,7 +390,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.adminName);
-            this.Controls.Add(this.varCb);
+            this.Controls.Add(this.nameCb);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.womanCb);
             this.Controls.Add(this.manCb);
@@ -409,8 +413,8 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnReserve);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.variety);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.numCb);
+            this.Controls.Add(this.searchTb);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.reserveDataList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -429,8 +433,8 @@
 
         private Button btnReserve;
         private Button button2;
-        private CheckBox variety;
-        private TextBox textBox6;
+        private CheckBox numCb;
+        private TextBox searchTb;
         private Button button4;
         private DataGridView reserveDataList;
         private Label label5;
@@ -455,7 +459,7 @@
         private CheckBox manCb;
         private CheckBox womanCb;
         private Button button6;
-        private CheckBox varCb;
+        private CheckBox nameCb;
         private Label adminName;
     }
 }

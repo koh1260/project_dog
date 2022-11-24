@@ -233,7 +233,7 @@ namespace project_dog
                 Program.con.Close();
                 return;
             }
-            MessageBox.Show("정보가 없다.");
+            MessageBox.Show("정보가 없습니다");
             Program.con.Close();
         }
 
