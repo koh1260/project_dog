@@ -112,7 +112,6 @@
             this.button4.TabIndex = 30;
             this.button4.Text = "검색";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // reserveDataList
             // 
@@ -228,7 +227,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1184, 27);
             this.menuStrip1.TabIndex = 52;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // registList
             // 
@@ -270,7 +268,6 @@
             this.label6.Size = new System.Drawing.Size(71, 15);
             this.label6.TabIndex = 54;
             this.label6.Text = "강아지 번호";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button3
             // 
