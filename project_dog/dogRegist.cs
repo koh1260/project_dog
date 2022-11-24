@@ -75,7 +75,7 @@ namespace project_dog
 
                     Program.con.Open();
 
-                    string inQuery = string.Format("INSERT INTO dog (name, age, sex, var, neu, par, image) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5}, @File)", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
+                    string inQuery = string.Format("INSERT INTO dog (이름, age, sex, var, neu, par, image) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5}, @File)", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
 
                     inCmd = new MySqlCommand(inQuery, Program.con);
 
@@ -85,7 +85,7 @@ namespace project_dog
                 {
                     Program.con.Open();
 
-                    string inQuery = string.Format("INSERT INTO dog (name, age, sex, var, neu, par) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5})", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
+                    string inQuery = string.Format("INSERT INTO dog (이름, age, sex, var, neu, par) VALUES('{0}',{1},'{2}', '{3}', '{4}',{5})", dog.name, dog.age, dog.sex, dog.var, dog.neu, dog.par);
 
                     inCmd = new MySqlCommand(inQuery, Program.con);
                 }

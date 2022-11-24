@@ -24,7 +24,7 @@ namespace project_dog
             manCb.Checked = true;
             numCb.Checked = true;
             adminName.Text = "관리자: " + Program.id;
-            dateTimePicker1.MinDate = DateTime.Now;
+            //dateTimePicker1.MinDate = DateTime.Now;
         }
 
         private void btnReserve_Click(object sender, EventArgs e)
@@ -278,29 +278,27 @@ namespace project_dog
         {
             CheckBox cb = (CheckBox)sender;
 
-            if(cb.Checked == true)
+            if (cb.Checked == true)
             {
                 searchVal = "Phone";
-                numCb.Checked = false;
+                nameCb.Checked = false;
                 return;
             }
-            if(cb.Checked == false)
+            if (cb.Checked == false)
             {
-                if(nameCb.Checked == false)
+                if (nameCb.Checked == false)
                 {
-                    searchVal = "Phone";
                     numCb.Checked = true;
+                    searchVal = "Phone";
                 }
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string search = searchTb.Text;
-
             Program.con.Open();
 
-            string searchQuery = string.Format("SELECT * FROM reservation WHERE {0} = {1}", searchVal, search);
+            string searchQuery = string.Format("SELECT * FROM reservation WHERE {0} = '{1}'", searchVal, searchTb.Text);
             MySqlCommand searchCmd = new MySqlCommand(searchQuery, Program.con);
             MySqlDataReader rdr = searchCmd.ExecuteReader();
 
@@ -316,7 +314,7 @@ namespace project_dog
                 Program.con.Close();
                 return;
             }
-            MessageBox.Show("정보가 없습니다");
+            MessageBox.Show("분양 예약 정보가 없습니다");
             Program.con.Close();
         }
 
@@ -326,17 +324,25 @@ namespace project_dog
 
             if (cb.Checked == true)
             {
-                searchVal = "name";
-                nameCb.Checked = false;
+                searchVal = "입양자";
+                numCb.Checked = false;
                 return;
             }
             if (cb.Checked == false)
             {
                 if (numCb.Checked == false)
                 {
-                    searchVal = "name";
+                    searchVal = "입양자";
                     nameCb.Checked = true;
                 }
+            }
+        }
+
+        private void searchTb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                button4_Click(sender, e);
             }
         }
     }

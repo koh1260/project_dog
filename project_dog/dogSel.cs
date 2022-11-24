@@ -20,7 +20,7 @@ namespace project_dog
             InitializeComponent();
             Program.con.Open();
             //미분양된 강아지 SELECT
-            string selQuery = "SELECT DogID, name, age, sex, var, neu  FROM dog WHERE par = 0";
+            string selQuery = "SELECT DogID, 이름, age, sex, var, neu  FROM dog WHERE par = 0";
             MySqlCommand selCmd = new MySqlCommand(selQuery, Program.con);
             MySqlDataAdapter da = new MySqlDataAdapter(selCmd);
             DataTable dt = new DataTable();

@@ -21,7 +21,7 @@ namespace project_dog
     }
     internal static class Program
     {
-        public static MySqlConnection con = new MySqlConnection("Server=113.198.233.244;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
+        public static MySqlConnection con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=****;");
         public static string id;
         /// <summary>
         ///  The main entry point for the application.

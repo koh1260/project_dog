@@ -21,7 +21,7 @@ namespace project_dog
 {
     public partial class dogList : Form
     {
-        string searchVal = "name";
+        string searchVal = "이름";
         List<CheckBox> search = new List<CheckBox>();
         public dogList()
         {
@@ -102,7 +102,7 @@ namespace project_dog
         {
             Program.con.Open();
             //미분양된 강아지 SELECT
-            string selQuery = "SELECT DogID, name, age, sex, var, neu  FROM dog WHERE par = 0";
+            string selQuery = "SELECT DogID, 이름, age, sex, var, neu  FROM dog WHERE par = 0";
             MySqlCommand selCmd = new MySqlCommand(selQuery, Program.con);
             MySqlDataAdapter da = new MySqlDataAdapter(selCmd);
             DataTable dt = new DataTable();
@@ -206,7 +206,7 @@ namespace project_dog
                 {
                     if (cb.Name == c.Name)
                     {
-                        searchVal = "name";
+                        searchVal = "이름";
                         continue;
                     }
                     c.CheckState = CheckState.Unchecked;
@@ -217,7 +217,7 @@ namespace project_dog
         {
             Program.con.Open();
             //체크된 조건을 만족하고 미분양된 강아지 검색
-            string searchQuery = string.Format("SELECT DogID, name, age, sex, var, neu  FROM dog WHERE {0} = '{1}' AND par = 0 ", searchVal, searchTb.Text);
+            string searchQuery = string.Format("SELECT DogID, 이름, age, sex, var, neu  FROM dog WHERE {0} = '{1}' AND par = 0 ", searchVal, searchTb.Text);
             MySqlCommand searchCmd = new MySqlCommand(searchQuery, Program.con);
             MySqlDataReader rdr = searchCmd.ExecuteReader();
 
