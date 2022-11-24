@@ -5,7 +5,6 @@ namespace project_dog
 {
     public partial class Form1 : Form
     {
-        MySqlConnection con;
         public Form1()
         {
             InitializeComponent();
@@ -18,12 +17,11 @@ namespace project_dog
 
             try
             {
-                con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
-                con.Open();
+                Program.con.Open();
                 string selQuery = string.Format("SELECT * FROM admin WHERE ID = '{0}'", id);
                 //string selPwQuery = string.Format("SELECT * FROM admin WHERE ID = '{0}'", id);
 
-                MySqlCommand selcmd = new MySqlCommand(selQuery, con);
+                MySqlCommand selcmd = new MySqlCommand(selQuery, Program.con);
                 //MySqlCommand selPcmd = new MySqlCommand(selPwQuery, con);
                 MySqlDataReader rdr = selcmd.ExecuteReader();
                 
@@ -38,7 +36,7 @@ namespace project_dog
                     if (Equals(pw, rdr["PW"]))
                     {
                         MessageBox.Show("¹Ý°¡¿ö " + rdr["name"]);
-                        con.Close();
+                        Program.con.Close();
                         rdr.Close();
 
                         dogList dl = new dogList(id);

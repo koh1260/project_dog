@@ -23,14 +23,12 @@ namespace project_dog
     {
         string searchVal = "name";
         List<CheckBox> search = new List<CheckBox>();
-        MySqlConnection con; 
         public dogList(string id)
         {
             InitializeComponent();
             nameCb.Checked = true;
             adminName.Text = "관리자: " + id;
             search = new List<CheckBox>(){nameCb, varCb};
-            con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
         }
 
         public void MysqlCon()
@@ -96,20 +94,21 @@ namespace project_dog
         {
             reserveList reservelist = new reserveList();
             reservelist.Show();
+            this.Close();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            con.Open();
+            Program.con.Open();
             //미분양된 강아지 SELECT
             string selQuery = "SELECT DogID, name, age, sex, var, neu  FROM dog WHERE par = 0";
-            MySqlCommand selCmd = new MySqlCommand(selQuery, con);
+            MySqlCommand selCmd = new MySqlCommand(selQuery, Program.con);
             MySqlDataAdapter da = new MySqlDataAdapter(selCmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
 
             dogDataList.DataSource = dt;
-            con.Close();
+            Program.con.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,9 +122,9 @@ namespace project_dog
 
             foreach (DataGridViewRow row in dogDataList.SelectedRows)
             {
-                con.Open();
+                Program.con.Open();
                 string imgSelQuery = string.Format("SELECT image FROM dog WHERE DogID = {0}", row.Cells[0].Value);
-                MySqlCommand imgSelCmd = new MySqlCommand(imgSelQuery, con);
+                MySqlCommand imgSelCmd = new MySqlCommand(imgSelQuery, Program.con);
                 MySqlDataReader rdr = imgSelCmd.ExecuteReader();
 
                 if (rdr.Read())
@@ -149,7 +148,7 @@ namespace project_dog
                 textBox4.Text = row.Cells[4].Value.ToString();
                 textBox5.Text = row.Cells[5].Value.ToString();
 
-                con.Close();
+                Program.con.Close();
             }
         }
 
@@ -167,13 +166,13 @@ namespace project_dog
                 dogDataList.Rows.RemoveAt(row.Index);
 
                 string delQuery = string.Format("DELETE FROM dog WHERE  DogID = {0}", data);
-                MySqlCommand delCmd = new MySqlCommand(delQuery, con);
+                MySqlCommand delCmd = new MySqlCommand(delQuery, Program.con);
 
                 MySqlDataReader rdr;
 
                 try
                 {
-                    con.Open();
+                    Program.con.Open();
                     rdr = delCmd.ExecuteReader();
                     textBox1.Text = null;
                     textBox2.Text = null;
@@ -183,7 +182,7 @@ namespace project_dog
                     pictureBox1.Image = null;
 
                     rdr.Close();
-                    con.Close();
+                    Program.con.Close();
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -215,10 +214,10 @@ namespace project_dog
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            con.Open();
+            Program.con.Open();
             //체크된 조건을 만족하고 미분양된 강아지 검색
             string searchQuery = string.Format("SELECT DogID, name, age, sex, var, neu  FROM dog WHERE {0} = '{1}' AND par = 0 ", searchVal, searchTb.Text);
-            MySqlCommand searchCmd = new MySqlCommand(searchQuery, con);
+            MySqlCommand searchCmd = new MySqlCommand(searchQuery, Program.con);
             MySqlDataReader rdr = searchCmd.ExecuteReader();
 
             if (rdr.Read())
@@ -230,11 +229,11 @@ namespace project_dog
 
                 dogDataList.DataSource = dt;
 
-                con.Close();
+                Program.con.Close();
                 return;
             }
             MessageBox.Show("정보가 없다.");
-            con.Close();
+            Program.con.Close();
         }
 
         private void searchTb_KeyDown(object sender, KeyEventArgs e)

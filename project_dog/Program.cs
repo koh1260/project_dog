@@ -1,3 +1,5 @@
+using MySql.Data.MySqlClient;
+
 namespace project_dog
 {
     class Creature
@@ -14,10 +16,12 @@ namespace project_dog
     }
     class Person : Creature
     {
-
+        public string pohneNum { get; set; }
+        public string address { get; set; }
     }
     internal static class Program
     {
+        public static MySqlConnection con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

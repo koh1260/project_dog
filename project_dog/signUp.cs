@@ -14,7 +14,6 @@ namespace project_dog
 {
     public partial class signUp : Form
     {
-        MySqlConnection con;
 
         public signUp()
         {
@@ -62,23 +61,23 @@ namespace project_dog
 
             try
             {
-                con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
-                con.Open();
+                Program.con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
+                Program.con.Open();
 
                 string selQuery = string.Format("SELECT * FROM admin WHERE ID='{0}'", id);
                 string inQuery = string.Format("INSERT INTO admin (ID, PW, name) VALUES('{0}','{1}','{2}')", id, pw, name);
 
-                MySqlCommand selCmd = new MySqlCommand(selQuery, con);
-                MySqlCommand inCmd = new MySqlCommand(inQuery, con);
+                MySqlCommand selCmd = new MySqlCommand(selQuery, Program.con);
+                MySqlCommand inCmd = new MySqlCommand(inQuery, Program.con);
                 MySqlDataReader rdr = selCmd.ExecuteReader();
 
                 //하나라도 비어 있음 안 됨, 비번 8자 이상, 아이디는 중복X, 
-                if (id.Length != 0 && pw.Length != 0 && pw.Length != 0 && name.Length != 0)
+                if (id.Length != 0 && pw.Length != 0 && pwC.Length != 0 && name.Length != 0)
                 {
                     if (rdr.Read())
                     {
                         MessageBox.Show("이미 존재하는 아이디입니다.");
-                        con.Close();
+                        Program.con.Close();
                         return;
                     }
                     rdr.Close();
@@ -93,19 +92,19 @@ namespace project_dog
                                 idTb.Text = null;
                                 pwTb.Text = null;
                                 pwCTb.Text = null;
-                                con.Close();
+                                Program.con.Close();
                                 return;
                             }
                         }
                         MessageBox.Show("비밀번호가 일치하지 않습니다.");
-                        con.Close();
+                        Program.con.Close();
                     }
                     MessageBox.Show("비번 8자 이상 입력 ㄱㄱ");
-                    con.Close();
+                    Program.con.Close();
                     return;
                 }
                 MessageBox.Show("정보를 모두 입력하세요.");
-                con.Close();
+                Program.con.Close();
             }
             catch (Exception exc)
             {
