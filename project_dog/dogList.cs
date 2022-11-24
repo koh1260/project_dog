@@ -23,11 +23,11 @@ namespace project_dog
     {
         string searchVal = "name";
         List<CheckBox> search = new List<CheckBox>();
-        public dogList(string id)
+        public dogList()
         {
             InitializeComponent();
             nameCb.Checked = true;
-            adminName.Text = "관리자: " + id;
+            adminName.Text = "관리자: " + Program.id;
             search = new List<CheckBox>(){nameCb, varCb};
         }
 
@@ -53,6 +53,7 @@ namespace project_dog
         {
             adopCom adopcom = new adopCom();
             adopcom.Show();
+            this.Close();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)

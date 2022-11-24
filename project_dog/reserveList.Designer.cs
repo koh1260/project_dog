@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReserve = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.variety = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.reserveDataList = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.perNumTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.perSexTb = new System.Windows.Forms.TextBox();
             this.perAgeTb = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -50,12 +51,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.perAddressTb = new System.Windows.Forms.Label();
+            this.perAddressTb = new System.Windows.Forms.TextBox();
+            this.perAddressLb = new System.Windows.Forms.Label();
             this.dogIdTb = new System.Windows.Forms.TextBox();
             this.btnDogSel = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.manCb = new System.Windows.Forms.CheckBox();
+            this.womanCb = new System.Windows.Forms.CheckBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.varCb = new System.Windows.Forms.CheckBox();
+            this.adminName = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.reserveDataList)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,21 +78,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(990, 139);
+            this.button2.Location = new System.Drawing.Point(990, 144);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 27);
             this.button2.TabIndex = 40;
-            this.button2.Text = "입양 완료";
+            this.button2.Text = "분양 완료";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(532, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 27);
-            this.button1.TabIndex = 39;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // variety
             // 
@@ -116,14 +114,47 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // dataGridView1
+            // reserveDataList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(269, 175);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(914, 485);
-            this.dataGridView1.TabIndex = 23;
+            this.reserveDataList.AllowUserToAddRows = false;
+            this.reserveDataList.AllowUserToDeleteRows = false;
+            this.reserveDataList.AllowUserToResizeColumns = false;
+            this.reserveDataList.AllowUserToResizeRows = false;
+            this.reserveDataList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.reserveDataList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.reserveDataList.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.reserveDataList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reserveDataList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.reserveDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reserveDataList.DefaultCellStyle = dataGridViewCellStyle5;
+            this.reserveDataList.GridColor = System.Drawing.SystemColors.Control;
+            this.reserveDataList.Location = new System.Drawing.Point(269, 175);
+            this.reserveDataList.Name = "reserveDataList";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.reserveDataList.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.reserveDataList.RowTemplate.Height = 25;
+            this.reserveDataList.Size = new System.Drawing.Size(914, 485);
+            this.reserveDataList.TabIndex = 23;
             // 
             // label5
             // 
@@ -168,13 +199,6 @@
             this.label2.TabIndex = 47;
             this.label2.Text = "나이";
             // 
-            // perSexTb
-            // 
-            this.perSexTb.Location = new System.Drawing.Point(93, 383);
-            this.perSexTb.Name = "perSexTb";
-            this.perSexTb.Size = new System.Drawing.Size(116, 23);
-            this.perSexTb.TabIndex = 45;
-            // 
             // perAgeTb
             // 
             this.perAgeTb.Location = new System.Drawing.Point(93, 325);
@@ -212,6 +236,7 @@
             this.registList.Name = "registList";
             this.registList.Size = new System.Drawing.Size(84, 23);
             this.registList.Text = "강아지 목록";
+            this.registList.Click += new System.EventHandler(this.registList_Click);
             // 
             // 입양완료갱얼지ToolStripMenuItem
             // 
@@ -219,6 +244,7 @@
             this.입양완료갱얼지ToolStripMenuItem.Name = "입양완료갱얼지ToolStripMenuItem";
             this.입양완료갱얼지ToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.입양완료갱얼지ToolStripMenuItem.Text = "분양 완료";
+            this.입양완료갱얼지ToolStripMenuItem.Click += new System.EventHandler(this.입양완료갱얼지ToolStripMenuItem_Click);
             // 
             // perNameTb
             // 
@@ -248,29 +274,30 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1092, 138);
+            this.button3.Location = new System.Drawing.Point(1092, 143);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 27);
             this.button3.TabIndex = 55;
-            this.button3.Text = "입양 취소";
+            this.button3.Text = "분양 취소";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(93, 487);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 88);
-            this.textBox1.TabIndex = 56;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // perAddressTb
             // 
-            this.perAddressTb.AutoSize = true;
-            this.perAddressTb.Location = new System.Drawing.Point(35, 490);
+            this.perAddressTb.Location = new System.Drawing.Point(93, 487);
+            this.perAddressTb.Multiline = true;
             this.perAddressTb.Name = "perAddressTb";
-            this.perAddressTb.Size = new System.Drawing.Size(31, 15);
-            this.perAddressTb.TabIndex = 57;
-            this.perAddressTb.Text = "주소";
+            this.perAddressTb.Size = new System.Drawing.Size(116, 88);
+            this.perAddressTb.TabIndex = 56;
+            // 
+            // perAddressLb
+            // 
+            this.perAddressLb.AutoSize = true;
+            this.perAddressLb.Location = new System.Drawing.Point(43, 488);
+            this.perAddressLb.Name = "perAddressLb";
+            this.perAddressLb.Size = new System.Drawing.Size(31, 15);
+            this.perAddressLb.TabIndex = 57;
+            this.perAddressLb.Text = "주소";
             // 
             // dogIdTb
             // 
@@ -302,16 +329,74 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // manCb
+            // 
+            this.manCb.AutoSize = true;
+            this.manCb.Location = new System.Drawing.Point(93, 386);
+            this.manCb.Name = "manCb";
+            this.manCb.Size = new System.Drawing.Size(38, 19);
+            this.manCb.TabIndex = 60;
+            this.manCb.Text = "남";
+            this.manCb.UseVisualStyleBackColor = true;
+            this.manCb.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // womanCb
+            // 
+            this.womanCb.AutoSize = true;
+            this.womanCb.Location = new System.Drawing.Point(159, 385);
+            this.womanCb.Name = "womanCb";
+            this.womanCb.Size = new System.Drawing.Size(38, 19);
+            this.womanCb.TabIndex = 61;
+            this.womanCb.Text = "여";
+            this.womanCb.UseVisualStyleBackColor = true;
+            this.womanCb.CheckedChanged += new System.EventHandler(this.womanCb_CheckedChanged);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(597, 142);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 27);
+            this.button6.TabIndex = 62;
+            this.button6.Text = "조회";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // varCb
+            // 
+            this.varCb.AutoSize = true;
+            this.varCb.Location = new System.Drawing.Point(539, 147);
+            this.varCb.Name = "varCb";
+            this.varCb.Size = new System.Drawing.Size(50, 19);
+            this.varCb.TabIndex = 63;
+            this.varCb.Text = "이름";
+            this.varCb.UseVisualStyleBackColor = true;
+            // 
+            // adminName
+            // 
+            this.adminName.AutoSize = true;
+            this.adminName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.adminName.Location = new System.Drawing.Point(15, 27);
+            this.adminName.Name = "adminName";
+            this.adminName.Size = new System.Drawing.Size(47, 17);
+            this.adminName.TabIndex = 64;
+            this.adminName.Text = "관리자";
+            this.adminName.Click += new System.EventHandler(this.adminName_Click);
+            // 
             // reserveList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(237)))));
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.adminName);
+            this.Controls.Add(this.varCb);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.womanCb);
+            this.Controls.Add(this.manCb);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.btnDogSel);
+            this.Controls.Add(this.perAddressLb);
             this.Controls.Add(this.perAddressTb);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dogIdTb);
@@ -322,22 +407,20 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.perSexTb);
             this.Controls.Add(this.perAgeTb);
             this.Controls.Add(this.perNameTb);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnReserve);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.variety);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.reserveDataList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "reserveList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "reserveList";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reserveDataList)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -349,17 +432,15 @@
 
         private Button btnReserve;
         private Button button2;
-        private Button button1;
         private CheckBox variety;
         private TextBox textBox6;
         private Button button4;
-        private DataGridView dataGridView1;
+        private DataGridView reserveDataList;
         private Label label5;
         private Label label4;
         private TextBox perNumTb;
         private Label label3;
         private Label label2;
-        private TextBox perSexTb;
         private TextBox perAgeTb;
         private DateTimePicker dateTimePicker1;
         private MenuStrip menuStrip1;
@@ -369,10 +450,15 @@
         private Label label1;
         private Label label6;
         private Button button3;
-        private TextBox textBox1;
-        private Label perAddressTb;
+        private TextBox perAddressTb;
+        private Label perAddressLb;
         private TextBox dogIdTb;
         private Button btnDogSel;
         private Button button5;
+        private CheckBox manCb;
+        private CheckBox womanCb;
+        private Button button6;
+        private CheckBox varCb;
+        private Label adminName;
     }
 }

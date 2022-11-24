@@ -5,7 +5,7 @@ namespace project_dog
     class Creature
     {
         public string name { get; set; }
-        public int age { get; set; }
+        public int? age { get; set; }
         public string sex { get; set; }
     }
     class Dog : Creature
@@ -22,6 +22,7 @@ namespace project_dog
     internal static class Program
     {
         public static MySqlConnection con = new MySqlConnection("Server=localhost;Port=3307;Database=dog_db;Uid=root;Pwd=1306;");
+        public static string id;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

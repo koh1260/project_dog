@@ -36,9 +36,11 @@
             // 
             this.dogSelList.AllowUserToAddRows = false;
             this.dogSelList.AllowUserToDeleteRows = false;
-            this.dogSelList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dogSelList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dogSelList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dogSelList.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dogSelList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dogSelList.GridColor = System.Drawing.SystemColors.Control;
             this.dogSelList.Location = new System.Drawing.Point(-2, -1);
             this.dogSelList.Name = "dogSelList";
             this.dogSelList.ReadOnly = true;

@@ -38,8 +38,8 @@ namespace project_dog
                         MessageBox.Show("¹Ý°¡¿ö " + rdr["name"]);
                         Program.con.Close();
                         rdr.Close();
-
-                        dogList dl = new dogList(id);
+                        Program.id = id;
+                        dogList dl = new dogList();
                         dl.Show();
                         this.Close();
                         return;
